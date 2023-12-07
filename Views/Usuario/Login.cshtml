@@ -1,0 +1,27 @@
+﻿@model ProjetoFinalIsabella.Models.Usuario
+<link rel="stylesheet" href="/css/Login.css" />
+@{
+    Layout = null;
+}
+<div class="text-center">
+    <form asp-action="Login">
+        <img class="logo" src="/img/logo.png" />
+        <div class="campos">
+            <label asp-for="UsuarioEmail"></label>
+            <input asp-for="UsuarioEmail" placeholder="Email" />
+            <span asp-validation-for="UsuarioEmail"></span>
+        </div>
+        <div class="campos">
+            <label asp-for="UsuarioSenha"></label>
+            <input asp-for="UsuarioSenha" type="password" placeholder="Senha" />
+            <span asp-validation-for="UsuarioSenha"></span>
+        </div>
+        <br />
+        <br />
+        <div class="btn-entrar">
+            <input type="submit" value="Entrar" />
+        </div>
+        <br />
+        <span class="mensagem">@ViewBag.Mensagem</span>
+    </form>
+</div>

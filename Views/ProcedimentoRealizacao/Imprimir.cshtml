@@ -1,0 +1,60 @@
+﻿@model ProjetoFinalIsabella.Models.ProcedimentoRealizacao
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/css/Imprimir.css" asp-append-version="true" />
+<div>
+    <header>
+        <div class="logo">
+            <img src="/img/logotipo.png" alt="logo">
+        </div>
+        <div>
+            <h1>Laboratório Bics</h1>
+        </div>
+    </header>
+    <main class="tudo">
+        <div>
+            <div class="detalhes">
+                <div>
+                    <strong>Data da Realização: @Html.DisplayFor(model => model.DataRealizacao)</strong>
+                </div>
+                <div class="separar">
+                     <span>Nome do cliente: @Html.DisplayFor(model => model.Cliente.ClienteNome)</span>
+                </div>
+                <div class="separar">
+                    <span>Cpf: @Html.DisplayFor(model => model.Cliente.ClienteCpf)</span>
+                </div>
+            </div>
+            <div class="detalhes2">
+                <div class="separar2">
+                    <span>Sexo: @Html.DisplayFor(model => model.Cliente.ClienteSexo)</span>
+                </div>
+                <div class="separar2">
+                    <span>Endereço: @Html.DisplayFor(model => model.Cliente.ClienteEndereco) ,Nº @Html.DisplayFor(model => model.Cliente.ClienteNumero)</span>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div>
+                    <h3>@Html.DisplayFor(model => model.Procedimento.TipoProcedimento.TipoProcedimentoNome)</h3>
+                </div>
+                <div class="separar2">
+                    <span>Colaborador: @Html.DisplayFor(model => model.Colaborador.ColaboradorNome)</span>
+                </div>
+                <div>
+                    <h4>Resultado........: @Html.DisplayFor(model => model.ObservacaoRealizacao)</h4>
+                </div>
+                <hr>
+                <div class="referencia">
+                    <span>Valor de referência: 0,35 a 4,95 uUI/ml</span>
+                </div>
+                <div class="separar">
+                    <span>Local de Realização: @Html.DisplayFor(model => model.LocalRealizacao.LocalRealizacaoNome)</span>
+                </div>
+                <div class="final">
+                    <strong>Metodologia: Quimioluminescência</strong>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
